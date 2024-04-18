@@ -1,0 +1,30 @@
+<html>
+<center>
+<?php
+include("setting.inc");
+?>
+<?php
+if(isset($_SESSION["check"]))
+{
+    if($_SESSION["check"]=="Yes")
+    {
+        echo"Chair您好,歡迎進入論文評論網頁<br/>";
+        echo"<a href = 'logout.php'>登出</a>";
+    }
+    else
+    {
+        echo"非法進入網頁";
+        header("Location:fail.php");
+    }
+}
+else
+{
+    echo"非法進入網頁";
+    header("Location:fail.php");
+}
+
+?>
+<?php
+include("footer.inc");
+?>
+</html>
